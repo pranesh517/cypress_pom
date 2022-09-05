@@ -11,7 +11,7 @@ describe('Home Page tests', function(){
     })
 
     beforeEach(function(){
-        cy.visit('/');
+        cy.visit('/' + 'AutomationPractice/');
     })
 
     it('TC001: Validated the Login Page', function() {
@@ -20,7 +20,7 @@ describe('Home Page tests', function(){
        homePage.enterValueInCountryAutoComplete(this.data.country);
        homePage.selectCountryAutoDropValue(this.data.country);
        homePage.isCourseAvailableInCourseTable(this.data.courseName);
-       homePage.clickOnTopBanerButton('Home');
+       homePage.clickOnTopBanerButton(this.data.buttonNameHome);
        const registrationPage = new RegistrationPage();
        registrationPage.validateIfRegistrationButtonDisplayed();
     })
